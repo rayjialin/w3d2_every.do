@@ -13,5 +13,5 @@
 @property (nonatomic) UITextField *titleLabel;
 @property (nonatomic) UITextField *detailLabel;
 @property (nonatomic) UILabel *priorityNumberLabel;
-
+@property (nonatomic) UILabel *deadline;
 @end

@@ -13,6 +13,7 @@
 
 @property (nonatomic) UITextField *titleLabel;
 @property (nonatomic) UITextView *detailTextView;
+@property (nonatomic) UIDatePicker *datePicker;
 @property (nonatomic) Todo *todo;
 
 -(instancetype)initWithTodo:(Todo *)todo;

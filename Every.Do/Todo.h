@@ -13,5 +13,7 @@
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *detail;
 @property (nonatomic) NSString *priorityNumber;
+@property (nonatomic) NSDate *deadline;
+@property (nonatomic) NSInteger orderId;
 
 @end

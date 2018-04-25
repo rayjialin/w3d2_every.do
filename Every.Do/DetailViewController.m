@@ -8,7 +8,7 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @end
 
@@ -34,10 +34,12 @@
     self.detailTextView.backgroundColor = [UIColor darkGrayColor];
     self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.detailTextView.translatesAutoresizingMaskIntoConstraints = NO;
-    
+    self.datePicker = [[UIDatePicker alloc] init];
+    self.datePicker.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.detailTextView];
+    [self.view addSubview:self.datePicker];
     
     [self setupView];
 }
@@ -50,10 +52,16 @@
     [self.titleLabel.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:0.05].active = YES;
     
     [self.detailTextView.topAnchor constraintEqualToAnchor:self.titleLabel.bottomAnchor constant:20].active = YES;
-    [self.detailTextView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-60].active = YES;
+//    [self.detailTextView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-60].active = YES;
     
     [self.detailTextView.leadingAnchor constraintEqualToAnchor:self.titleLabel.leadingAnchor].active = YES;
     [self.detailTextView.trailingAnchor constraintEqualToAnchor:self.titleLabel.trailingAnchor].active = YES;
+    
+    [self.datePicker.topAnchor constraintEqualToAnchor:self.detailTextView.bottomAnchor constant:20].active = YES;
+    [self.datePicker.leadingAnchor constraintEqualToAnchor:self.detailTextView.leadingAnchor].active = YES;
+    [self.datePicker.trailingAnchor constraintEqualToAnchor:self.detailTextView.trailingAnchor].active = YES;
+    [self.datePicker.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-20].active = YES;
 }
+
 
 @end

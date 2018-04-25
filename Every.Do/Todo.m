@@ -17,6 +17,9 @@
         _title = @"";
         _detail = @"";
         _priorityNumber = @"0";
+        _deadline = [NSDate date];
+        _orderId = 0;
+        
     }
     return self;
 }

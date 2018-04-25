@@ -18,25 +18,24 @@
     [super viewDidLoad];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(todoAdded)];
-//
-//    self.titleLabel = [UITextField new];
-//
-//    self.detailTextView = [UITextView new];
     self.detailTextView.editable = YES;
     
-
+    
     
     
 }
 
 -(void)todoAdded{
-
+    
+    TodoArray *todoArray = [TodoArray sharedInstance];
+    
     self.todo = [Todo new];
     // writing todo object and pass it back to main VC
     self.todo.title = self.titleLabel.text;
     self.todo.detail = self.detailTextView.text;
-    
-    TodoArray *todoArray = [TodoArray sharedInstance];
+    self.todo.deadline = [self.datePicker date];
+    self.todo.orderId = todoArray.todoList.count;
+
     [todoArray.todoList addObject:self.todo];
     
     
